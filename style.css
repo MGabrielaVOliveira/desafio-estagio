@@ -1,0 +1,78 @@
+body {
+  background: linear-gradient(to right, #000814, #001e4d);
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 10%;
+  height: auto;
+}
+
+div {
+  padding: 1%;
+}
+
+.botao {
+  background: linear-gradient(to right, #00cafc, #0056e2);
+  color: #ffffff;
+  width: 156px;
+  height: 45px;
+  top: 151px;
+  left: 1156px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 6px;
+}
+
+.icon {
+  width: 20px; 
+  height: 20px; 
+  padding-bottom: 3px;
+}
+
+.custom-border {
+  border-width: 3px;
+}
+
+.box {
+  border: 3px solid #404a5c;
+  border-radius: 10px;
+  width: 1600px;
+  height: 50px;
+}
+
+.box input {
+  display: inline-block;
+  outline: none;
+  border: 0;
+  padding: 8px; 
+  background: none;
+  color: #ffffff;
+}
+
+.box .button {
+  background: #404a5c;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  float: right;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: 100px;
+  height: 33px;
+  margin-top: -10px;
+}
+
+.form-control::placeholder {
+  color: #ffffff;
+}
+
+.modal-content {
+  background: linear-gradient(to right, #000814, #001e4d);
+  color: #fff;
+  border-radius: 3px;
+  border: 3px solid transparent;
+  border-image: linear-gradient(to right, #00cafc, #0056e2);
+  border-image-slice: 1;
+}
