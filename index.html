@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SoftPet</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- Correção: rel="stylesheet" em vez de rel"stylesheet" -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <div class="container-fluid">
+        <img class="logo" src="./images/logo.png" alt="SoftPetlogo" />
+      </div>
+
+      <div class="container-fluid d-flex">
+        <nav class="navbar">
+          <form class="d-flex">
+            <div class="box d-flex">
+              <input
+                type="text"
+                name="search"
+                style="min-width: 1475px"
+                placeholder="Pesquisar..."
+                ]
+              />
+              <button type="submit" class="button">Pesquisar</button>
+              <div></div>
+            </div>
+          </form>
+        </nav>
+
+        <div class="container">
+          <button
+            tyle="button"
+            class="botao m-3"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            <img class="icon" src="Group.svg" alt="lupa" />
+            Cadastrar
+          </button>
+
+          <div
+            class="modal fade"
+            id="staticBackdrop"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <img class="icon" src="Group.svg" alt="lupa" />
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                    Cadastrar
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row mb-3">
+                    <div class="col">
+                      <!-- Nome -->
+                      <label for="nome" class="form-label">Nome</label>
+                      <input
+                        style="background-color: transparent; color: #ffffff"
+                        type="text"
+                        class="form-control"
+                        id="nome"
+                      />
+                    </div>
+                    <div class="col">
+                      <!-- Animal -->
+                      <label class="form-label d-block">Animal</label>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="animal"
+                          id="gato"
+                          value="gato"
+                        />
+                        <label class="form-check-label" for="gato">Gato</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="animal"
+                          id="cachorro"
+                          value="cachorro"
+                        />
+                        <label class="form-check-label" for="cachorro"
+                          >Cachorro</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <!-- Dono -->
+                      <label for="dono" class="form-label">Dono</label>
+                      <input
+                        style="background-color: transparent; color: #ffffff"
+                        type="text"
+                        class="form-control"
+                        id="dono"
+                      />
+                    </div>
+                    <div class="col">
+                      <!-- Barra de Pesquisa -->
+                      <label for="Raça" class="form-label">Raça</label>
+                      <input
+                        style="background-color: transparent; color: #ffffff"
+                        type="text"
+                        class="form-control"
+                        id="pesquisa"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <!-- Dono -->
+                      <label for="Telefone" class="form-label">Telefone</label>
+                      <input
+                        style="background-color: transparent; color: #ffffff"
+                        type="text"
+                        class="form-control"
+                        id="telefone"
+                      />
+                    </div>
+                    <div class="col">
+                      <!-- Barra de Pesquisa -->
+                      <label for="Nascimento" class="form-label"
+                        >Nascimento</label
+                      >
+                      <input
+                        style="background-color: transparent; color: #ffffff"
+                        type="date"
+                        class="form-control"
+                        id="nascimento"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- ... outros campos e conteúdos ... -->
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Voltar
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="cadastrarPet()"
+                  >
+                    Confirmar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div id="perfilPets" class="row row-cols-1 row-cols-md-4 g-4">
+          <!-- Seus perfis serão adicionados aqui dinamicamente -->
+        </div>
+      </div>
+
+      <div
+        class="card-fluid align-items-center"
+        style="
+          max-width: 300px;
+          max-height: 95px;
+          background: linear-gradient(to right, #000814, #001e4d);
+        "
+      >
+        <div class="row align-items-start">
+          <div
+            class="col-md-4 align-self-center"
+            style="position: relative; top: -10px"
+          >
+            <img
+              src="./images/Icon.png"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
